@@ -1,0 +1,7 @@
+*.aux
+*.dvi
+*.fdb*
+*.fls
+*.out
+
+node_modules/
