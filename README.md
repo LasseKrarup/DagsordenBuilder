@@ -7,7 +7,7 @@ Projektet kan bruges på Linux systemer eller på Windows med [CygWin](https://w
 
 Derudover anbefales det at bruge en terminal-emulator som fx [Cmder](https://cmder.net/), men *cmd.exe* eller *Windows PowerShell* kan også bruges.
 
-#Guide
+# Før brug (vigtigt)
 
 Før brug er det vigtigt, at den (eller de) ønskede outputmapper indtastes i Makefile i mappen Skabelon [(/Skabelon/Makefile)](Skabelon/Makefile). Dette gøres ved at skrive den korrekte sti i variablerne *OUTPUTDIR1* og *OUTPUTDIR2*.
 
@@ -22,6 +22,18 @@ Hvis det kun ønskes, at der skal outputtes en PDF ét sted, så slettes variabl
 deploy: latex name
 	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR1)/$(PRINTNAME).pdf"
 	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR2)/$(PRINTNAME).pdf" #SLET MIG! <-------------------
+```
+
+# Guide
+
+1. Åbn en terminal
+1. Skriv `make` på Windows eller `make buildLinux` på Linux
+
+Du vil nu blive bedt om at udfylde fx mødenavn (oprydningsmøde, stormøde 1...), dato, tidspunkt osv. Der er ingen formatteringskrav, så følgende er fx muligt:
+
+```
+$ Dato for møde:          Torsdag d. 5. april
+$ Tidspunkt for møde:     kl. 16:00
 ```
 
 I root-directory for projektet ligger [et bash-script kaldet buildscript.sh](buildscript.sh). Dette script tager brugerens input og bygger dagsordenen. Derudover ligger en [Makefile](Makefile), som blot eksekverer scriptet, enten på Windows (default) eller på linux med *make buildLinux*
