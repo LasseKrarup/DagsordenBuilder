@@ -1,6 +1,6 @@
-.PHONY: all build
+.PHONY: all build buildLinux
 
-all: build buildLinux
+all: build
 
 build:
 	c:\cygwin64\bin\bash buildscript.sh
