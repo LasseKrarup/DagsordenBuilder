@@ -1,7 +1,9 @@
-.PHONY: all copy
+.PHONY: all build
 
-all: copy
+all: build buildLinux
 
-copy:
-	cp -r Skabelon Dagsorden_Ny
-	rm -f Dagsorden_Ny/name.txt
+build:
+	c:\cygwin64\bin\bash buildscript.sh
+
+buildLinux:
+	$(shell ./buildscript.sh)
