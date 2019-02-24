@@ -1,7 +1,7 @@
 # Makefile
 
-OUTPUTDIR1 = Z:\Rusture\2019 Sommer\Formandsgruppen\Dagsordener
-OUTPUTDIR2 = Z:\Rusture\2019 Sommer\Dagsordner og referater
+OUTPUTDIR1 = Z:/Rusture/2019 Sommer/Formandsgruppen/Dagsordener
+OUTPUTDIR2 = Z:/Rusture/2019 Sommer/Dagsordner og referater
 PRINTNAME = $(shell cat name.txt)
 
 .PHONY: all distclean clean help latex deploy name
@@ -20,8 +20,8 @@ latex: name
 	@latexmk -pdf main.tex -jobname="$(PRINTNAME)"
 
 deploy: latex name
-	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR1)\$(PRINTNAME).pdf"
-	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR2)\$(PRINTNAME).pdf"
+	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR1)/$(PRINTNAME).pdf"
+	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR2)/$(PRINTNAME).pdf"
 
 clean: name
 	latexmk -c -jobname="$(PRINTNAME)" main.tex

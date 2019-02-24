@@ -12,16 +12,16 @@ Derudover anbefales det at bruge en terminal-emulator som fx [Cmder](https://cmd
 Før brug er det vigtigt, at den (eller de) ønskede outputmapper indtastes i Makefile i mappen Skabelon [(/Skabelon/Makefile)](Skabelon/Makefile). Dette gøres ved at skrive den korrekte sti i variablerne *OUTPUTDIR1* og *OUTPUTDIR2*.
 
 ```Makefile
-OUTPUTDIR1 = Z:\Rusture\2019 Sommer\Formandsgruppen\Dagsordener
-OUTPUTDIR2 = Z:\Rusture\2019 Sommer\Dagsordner og referater
+OUTPUTDIR1 = Z:\Rusture\2019 Sommer\Formandsgruppen\Dagsordener #Indsæt din sti her
+OUTPUTDIR2 = Z:\Rusture\2019 Sommer\Dagsordner og referater #...og her hvis du vil have 2 outputs. Ellers læs nedenfor
 ```
 
 Hvis det kun ønskes, at der skal outputtes en PDF ét sted, så slettes variablen *OUTPUTDIR2* og følgende linje slettes:
 
 ```Makefile
 deploy: latex name
-	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR1)\$(PRINTNAME).pdf"
-	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR2)\$(PRINTNAME).pdf" #SLET MIG! <-------------------
+	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR1)/$(PRINTNAME).pdf"
+	cp "$(PRINTNAME).pdf" "$(OUTPUTDIR2)/$(PRINTNAME).pdf" #SLET MIG! <-------------------
 ```
 
 I root-directory for projektet ligger [et bash-script kaldet buildscript.sh](buildscript.sh). Dette script tager brugerens input og bygger dagsordenen. Derudover ligger en [Makefile](Makefile), som blot eksekverer scriptet, enten på Windows (default) eller på linux med *make buildLinux*
