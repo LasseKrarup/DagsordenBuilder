@@ -4,4 +4,4 @@
 *.fls
 *.out
 
-node_modules/
+Dagsorden_*/
