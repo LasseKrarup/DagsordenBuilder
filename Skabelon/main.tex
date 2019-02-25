@@ -1,10 +1,5 @@
 \input{preamble.tex}
-
-%% ============== KONSTANTER ================== %%
-\newcommand{\meeting}{MEETINGNAME}
-\newcommand{\dato}{MEETINGDATE}
-\newcommand{\tid}{MEETINGTIME}
-\newcommand{\location}{MEETINGPLACE}
+\input{variables.tex}
 
 \begin{document}
 
@@ -39,9 +34,11 @@
   \item Meddelelser
 \end{enumerate}
 
-\input{Kommentarer.tex}
+\textbf{Kommentarer: }\kommentarer{}
 
-\input{Afbud.tex}
+\textbf{Afbud: }\afbud{}\\
+\textbf{Kommer senere: }\kommersenere{}\\
+\textbf{Går før: }\gaafoer{}
 
 \vspace{2em}
 \begin{minipage}{0.55\textwidth}

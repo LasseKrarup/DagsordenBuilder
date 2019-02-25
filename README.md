@@ -26,6 +26,8 @@ deploy: latex name
 
 # Guide
 
+## Opret ny dagsorden
+
 1. Åbn en terminal
 1. Skriv `make` på Windows eller `make buildLinux` på Linux
 
@@ -36,6 +38,16 @@ $ Dato for møde:          Torsdag d. 5. april
 $ Tidspunkt for møde:     kl. 16:00
 ```
 
-I root-directory for projektet ligger [et bash-script kaldet buildscript.sh](buildscript.sh). Dette script tager brugerens input og bygger dagsordenen. Derudover ligger en [Makefile](Makefile), som blot eksekverer scriptet, enten på Windows (default) eller på linux med *make buildLinux*
+## Tilføj afbud, gå-før og/eller kommer-senere til eksisterende dagsorden
 
-Efter dagsordenen er blevet bygget kan lokale ændringer (såsom tilføjelse af afbud) ske under det subdirectory, der bliver oprettet. Der kan IKKE foretages ændringer i output-filerne ved at køre [Makefile](Makefile) fra root directory. Man skal ændre de lokale filer og køre en Makefile direkte fra subdirectory, fx *Dagsorden_Stormøde_3/Makefile*.
+1. Åbn en terminal
+1. Skriv `make afbud`
+1. Indtast navnet på en eksisterende dagsorden uden ordet "Dagsorden" og uden underscores. For en fil kaldet "Dagsorden_Stormøde_1_foreløbig" vil navnet være "Stormøde 1 foreløbig"
+1. Tilføj afbud, gå-før eller kommer-senere. Efterlad feltet blankt for ikke at tilføje nogen. Afslut indtastning med <ENTER>
+
+## Tilføj kommentarer
+
+1. Åbn en terminal
+1. Skriv `make comment`
+1. Indtast navnet på en eksisterende dagsorden uden ordet "Dagsorden" og uden underscores. For en fil kaldet "Dagsorden_Stormøde_1_foreløbig" vil navnet være "Stormøde 1 foreløbig"
+1. Tilføj en kommentar og afslut med <ENTER>

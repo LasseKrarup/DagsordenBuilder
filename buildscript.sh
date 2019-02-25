@@ -4,9 +4,6 @@
 echo
 echo "===== DAGSORDEN BUILDER ======"
 echo
-echo "Bemærk! Virker kun til at bygge en ny dagsorden."
-echo "Ændringer foretages efterfølgende i den mappe, der bliver lavet"
-echo
 while [ -z "$NAVN" ]
 do
   read -p "Navn på møde: " NAVN
@@ -25,16 +22,19 @@ cp -r Skabelon $DIRNAME
 rm -f $DIRNAME/name.txt
 
 #Search and replace in LaTeX files
-sed -i "s/MEETINGNAME/$NAVN/g" $DIRNAME/main.tex
-sed -i "s/MEETINGDATE/$DATO/g" $DIRNAME/main.tex
-sed -i "s/MEETINGTIME/$TIDSPUNKT/g" $DIRNAME/main.tex
-sed -i "s/MEETINGPLACE/$STED/g" $DIRNAME/main.tex
-sed -i "s/MEETINGKOMMENTARER/$KOMMENTARER/g" $DIRNAME/Kommentarer.tex
-sed -i "s/MEETINGAFBUD/$AFBUD/g" $DIRNAME/Afbud.tex
-sed -i "s/MEETINGKOMMERSENERE/$KOMMERSENERE/g" $DIRNAME/Afbud.tex
-sed -i "s/MEETINGGAAFOER/$GAAFOER/g" $DIRNAME/Afbud.tex
+sed -i "s/meeting.*/meeting}{$NAVN}/g" $DIRNAME/variables.tex
+sed -i "s/dato.*/dato}{$DATO}/g" $DIRNAME/variables.tex
+sed -i "s/tid.*/tid}{$TIDSPUNKT}/g" $DIRNAME/variables.tex
+sed -i "s/location.*/location}{$STED}/g" $DIRNAME/variables.tex
+sed -i "s/kommentarer.*/kommentarer}{$KOMMENTARER}/g" $DIRNAME/variables.tex
+sed -i "s/afbud.*/afbud}{$AFBUD}/g" $DIRNAME/variables.tex
+sed -i "s/kommersenere.*/kommersenere}{$KOMMERSENERE}/g" $DIRNAME/variables.tex
+sed -i "s/gaafoer.*/gaafoer}{$GAAFOER}/g" $DIRNAME/variables.tex
 
 echo "=============================="
 
 #Make the thing
+if [ $1 != "nomake" ]
+then
 make -C $DIRNAME NAME=${NAVN// /_}
+fi
