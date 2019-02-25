@@ -9,6 +9,8 @@ Derudover anbefales det at bruge en terminal-emulator som fx [Cmder](https://cmd
 
 # Før brug (vigtigt)
 
+Det anbefales at mappe BlackBoard RUS-mappen til din computer. Derved kan du uploade dagsordenerne direkte til det fælles drev for max tjekkethed. [Følg denne guide på Windows 10](https://www.laptopmag.com/articles/map-network-drive-windows-10) for at mappe drevet. Under "Folder:" indtastes det link, man finder på BlackBoard ved at åbne fællesdrevet på BlackBoard og vælge "Set Up Web Folder".
+
 Før brug er det vigtigt, at den (eller de) ønskede outputmapper indtastes i Makefile i mappen Skabelon [(/Skabelon/Makefile)](Skabelon/Makefile). Dette gøres ved at skrive den korrekte sti i variablerne *OUTPUTDIR1* og *OUTPUTDIR2*.
 
 ```Makefile
