@@ -38,16 +38,17 @@ $ Dato for møde:          Torsdag d. 5. april
 $ Tidspunkt for møde:     kl. 16:00
 ```
 
-## Tilføj afbud, gå-før og/eller kommer-senere til eksisterende dagsorden
+## Lav en ændring på eksisterende dagsorden
 
 1. Åbn en terminal
 1. Skriv `make afbud`
 1. Indtast navnet på en eksisterende dagsorden uden ordet "Dagsorden" og uden underscores. For en fil kaldet "Dagsorden_Stormøde_1_foreløbig" vil navnet være "Stormøde 1 foreløbig"
-1. Tilføj afbud, gå-før eller kommer-senere. Efterlad feltet blankt for ikke at tilføje nogen. Afslut indtastning med <ENTER>
+1. Tilføj de ønskede ændringer
+	* Et nyt navn vil lave en kopi af den nuværende dagsorden med et nyt navn og tilføje de ændringer, du måtte tilføje
+	* Hvis et felt ikke ønskes ændret, skal det blot efterlades blankt (tryk <ENTER> uden at indtaste noget)
+	* Hvis der er indtastet et nyt navn, vil den gamle dagsorden ikke blive slettet. Dette er med vilje, da man så let kan lave "foreløbige" og "endelige" dagsordener
 
-## Tilføj kommentarer
+# Future work
 
-1. Åbn en terminal
-1. Skriv `make comment`
-1. Indtast navnet på en eksisterende dagsorden uden ordet "Dagsorden" og uden underscores. For en fil kaldet "Dagsorden_Stormøde_1_foreløbig" vil navnet være "Stormøde 1 foreløbig"
-1. Tilføj en kommentar og afslut med <ENTER>
+* Port til OS X (Mac)
+* Konverter Windows-udgave til Batch-script, så man undgår CygWin
