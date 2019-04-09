@@ -54,3 +54,4 @@ $ Tidspunkt for møde:     kl. 16:00
 
 * Port til OS X (Mac)
 * Konverter Windows-udgave til Batch-script, så man undgår CygWin
+* Lav skidtet om fra bunden, så det ikke bruger Makefiles (hvilket bliver brugt på en ret retarderet måde i det her projekt, men jeg vidste ikke bedre, da jeg startede...)

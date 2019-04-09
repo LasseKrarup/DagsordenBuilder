@@ -86,6 +86,7 @@ sed -i "/kommentarer/s/ingen\. //g" $DIRNAME/variables.tex
 sed -i "/kommentarer/s/ingen kommentarer\. //g" $DIRNAME/variables.tex
 sed -i "s/{\. /{/g" $DIRNAME/variables.tex
 sed -i "s/\.\./\./g" $DIRNAME/variables.tex
+sed -i "s/\s\.//g" $DIRNAME/variables.tex
 
 echo "=============================="
 
